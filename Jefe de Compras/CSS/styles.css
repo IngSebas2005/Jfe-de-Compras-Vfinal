@@ -1,0 +1,308 @@
+/* Estilo base, fondo  y tipografía */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('/IMG/img3.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #ffffff;
+  overflow: hidden; /* Evita scroll vertical */
+}
+
+/* Contenedor principal con estructura horizontal */
+.container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Barra lateral con fondo translúcido y efecto de desenfoque */
+.sidebar {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff20;
+  backdrop-filter: blur(60px);
+  -webkit-backdrop-filter: blur(60px);
+  padding: 30px 10px;
+  color: #ffffff;
+}
+
+/* Botones de navegación laterales */
+.nav-btn,
+.sidebar-button {
+  background: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: none;
+  padding: 12px;
+  margin: 20px 0;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Estados visuales de los botones (hover y activo) */
+.nav-btn:hover,
+.nav-btn.active,
+.sidebar-button:hover {
+  background-color: #ffffff22;
+  border: 1px solid #ddd;
+}
+
+/* Sección principal( la tabla y el formulario )*/
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* Barra superior con buscador y botón de cierre de sesión */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.topbar input[type="text"] {
+  width: 60%;
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: none;
+  background-color: #38261c;
+  color: #fff;
+  font-size: 16px;
+}
+
+.topbar button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* Contenedor general del contenido ( tabla + formulario) */
+.content {
+  display: flex;
+  gap: 20px;
+  flex-grow: 1;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+/* Estilo visual del contenedor de la tabla */
+.table-container {
+  flex: 2;
+  background-color: #ffffff20;
+  backdrop-filter: blur(60px);
+  -webkit-backdrop-filter: blur(60px);
+  border-radius: 12px;
+  overflow-y: auto;
+  height: auto;
+  max-height: none;
+}
+
+/* Tabla sin bordes y separación entre filas */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 3px;
+}
+
+/* Encabezado con fondo azul */
+thead tr {
+  background-color: #10616c;
+}
+
+thead th {
+  text-align: center;
+  padding: 16px 16px;
+  color: #ffffff;
+  font-weight: normal;
+}
+
+thead th:first-child {
+  border-top-left-radius: 12px;
+}
+
+thead th:last-child {
+  border-top-right-radius: 12px;
+}
+
+/* Filas de productos con fondo translúcido */
+.product-row {
+  background-color: #ffffff69;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Celdas de las filas */
+.product-row td {
+  padding: 16px 16px;
+  color: #ffffff;
+  background-color: transparent;
+}
+
+/* Efecto hover: se invierte el color */
+.product-row:hover td {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Fila seleccionada: permanece con fondo blanco y texto negro */
+.product-row.selected td {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Formulario con fondo translúcido */
+.form-container {
+  flex: 1;
+  background-color: #ffffff20;
+  backdrop-filter: blur(60px);
+  -webkit-backdrop-filter: blur(60px);
+  border: 1px solid #ffffff1a;
+  padding: 12px 16px;
+  border-radius: 16px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  font-size: 14px;
+}
+
+.form-container h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Agrupación de campos del formulario */
+.form-group {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Etiquetas de los campos */
+label {
+  margin-bottom: 4px;
+  font-size: 12px;
+  color: #cccccc;
+}
+
+/* Entradas del formulario */
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #ffffff44;
+  background: transparent;
+  color: #fff;
+  font-size: 13px;
+}
+
+/* Botones del formulario con gradiente y transición */
+.form-container button {
+  padding: 8px 14px;
+  margin: 6px 6px 0 0;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(to right, #7e685a, #a49a93);
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Efecto de cambio de color al pasar el cursor por un producto */
+.form-container button:hover {
+  background: linear-gradient(to right, #ffffff, #dddddd);
+  color: #000;
+}
+
+/* Estilos responsivos */
+@media (max-width: 900px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column; /* Reorganiza la estructura verticalmente */
+    min-height: 100vh;
+  }
+
+  .sidebar {
+    width: 100%; /* La barra lateral se adapta a todo el ancho */
+    flex-direction: row; /* Los botones se muestran en fila */
+    justify-content: space-around; /* Distribuye los botones uniformemente */
+    align-items: center;
+    border-radius: 0;
+    padding: 10px;
+  }
+
+  .nav-btn,
+  .sidebar-button {
+    font-size: 14px;
+    padding: 8px 12px;
+    margin: 5px; /* Ajuste del tamaño y espaciado */
+  }
+
+  .main {
+    flex: 1;
+    padding: 10px;
+  }
+
+  .topbar {
+    flex-direction: column; /* Elementos en Vertical*/
+    align-items: flex-start;
+    gap: 10px; /* Espaciado entre elementos */
+  }
+
+  .topbar input[type="text"] {
+    width: 100%; /* Barra de busqueda */
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center; /* Centra el contenido de la pagina */
+  }
+
+  .form-container {
+    width: 85%;
+    max-width: 400px; /* Limita el ancho del contenido */
+    margin: 0 auto;
+    flex: unset;
+    order: -1; /* Muestra primero el formulario */
+  }
+
+  .table-container {
+    width: 100%;
+    flex: unset;
+    order: 0;
+    border: none; /* Elimina cualquier borde externo */
+  }
+
+  /* Elimina los bordes y sombras de la tabla */
+  .table-container table,
+  .table-container thead tr,
+  .table-container th,
+  .table-container td {
+    border: none !important;
+    box-shadow: none !important;
+  }
+}

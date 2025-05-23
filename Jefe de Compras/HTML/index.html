@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Inventario</title>
+  <link rel="stylesheet" href="/CSS/styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Barra lateral de navegación -->
+    <div class="sidebar">
+      <!-- Botones de navegación -->
+      <button class="nav-btn" onclick="setActive(this)">Calendario</button>
+      <button class="nav-btn active" onclick="setActive(this)">Inventario</button>
+      <button class="nav-btn" onclick="setActive(this)">Equipos</button>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="main">
+      <!-- Barra superior con buscador y opción para cerrar sesión -->
+      <div class="topbar">
+        <input type="text" id="searchInput" placeholder="Buscar un producto">
+        <button>Cerrar sesión</button>
+      </div>
+
+      <div class="content">
+        <!-- Tabla para mostrar los productos del inventario -->
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Distribuidor</th>
+                <th>Recibido/Vencimiento</th>
+                <th>Cantidad</th>
+              </tr>
+            </thead>
+            <!-- Cuerpo de la tabla -->
+            <tbody id="product-table-body"></tbody>
+          </table>
+        </div>
+
+        <!-- Formulario -->
+        <div class="form-container">
+          <h3>Agregar Producto</h3>
+          
+          <div class="form-group">
+            <label for="nombre">Nombre del producto</label>
+            <input type="text" id="nombre">
+          </div>
+
+          <div class="form-group">
+            <label for="distribuidor">Nombre del distribuidor</label>
+            <input type="text" id="distribuidor">
+          </div>
+
+          <div class="form-group">
+            <label for="id">ID del Producto</label>
+            <input type="text" id="id">
+          </div>
+
+          <div class="form-group">
+            <label for="recibido">Fecha de recibido</label>
+            <input type="date" id="recibido">
+          </div>
+
+          <div class="form-group">
+            <label for="vencimiento">Fecha de vencimiento</label>
+            <input type="date" id="vencimiento">
+          </div>
+
+          <div class="form-group">
+            <label for="cantidad">Cantidad disponible</label>
+            <input type="number" id="cantidad">
+          </div>
+
+          <!-- Botones del formulario -->
+          <button id="add-btn">Agregar</button>
+          <button id="edit-btn">Modificar</button>
+          <button id="delete-btn">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/JS/script.js"></script>
+
+</body>
+</html>
